@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.3 (Python 3.8.11 on linux)" generated="20210716 19:21:15.667" rpa="false" schemaversion="2">
+<suite id="s1" name="Sample Test" source="/workspace/python-robot-framework/Tests/sample_test.robot">
+<test id="s1-t1" name="Example of connecting to Lambdatest via Robot Framework">
+<kw name="Open test browser" library="Common" type="SETUP">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>https://webcamtests.com/check</arg>
+<arg>browser=${BROWSER}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${CAPABILITIES}</arg>
+<arg>options=add_argument("--disable-popup-blocking");add_argument("--use-fake-device-for-media-stream");add_argument("--use-fake-ui-for-media-stream")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210716 19:21:15.840" level="INFO">Opening browser 'chrome' to base url 'https://webcamtests.com/check' through remote server at 'https://vishnukdas:D3tRgjqJOrG7GKCmdIkafAP7uUbPfiK3SaWXTWdjX3vhglk2yd@hub.lambdatest.com/wd/hub'.</msg>
+<status status="PASS" starttime="20210716 19:21:15.839" endtime="20210716 19:21:37.411"/>
+</kw>
+<timeout value="50 minutes"/>
+<status status="PASS" starttime="20210716 19:21:15.838" endtime="20210716 19:21:37.411"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>id: webcam-launcher</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210716 19:21:37.676" level="INFO">Current page contains element 'id: webcam-launcher'.</msg>
+<status status="PASS" starttime="20210716 19:21:37.411" endtime="20210716 19:21:37.677"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>id: webcam-launcher</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210716 19:21:39.142" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210716 19:21:38.178" endtime="20210716 19:21:39.142"/>
+</kw>
+<msg timestamp="20210716 19:21:37.677" level="INFO">Clicking element 'id: webcam-launcher'.</msg>
+<msg timestamp="20210716 19:21:39.145" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=90.0.4430.72)
+</msg>
+<status status="FAIL" starttime="20210716 19:21:37.677" endtime="20210716 19:21:39.145"/>
+</kw>
+<kw name="Close test browser" library="Common" type="TEARDOWN">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${REMOTE_URL}' != ''</arg>
+<arg>Report Lambdatest Status</arg>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Report Lambdatest Status" library="LambdaTestStatus">
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<msg timestamp="20210716 19:21:39.148" level="INFO">Executing JavaScript:
+lambda-status=failed
+Without any arguments.</msg>
+<msg timestamp="20210716 19:21:40.352" level="INFO">Executing JavaScript:
+lambda-name=Example of connecting to Lambdatest via Robot Framework
+Without any arguments.</msg>
+<status status="PASS" starttime="20210716 19:21:39.147" endtime="20210716 19:21:41.547"/>
+</kw>
+<status status="PASS" starttime="20210716 19:21:39.146" endtime="20210716 19:21:41.547"/>
+</kw>
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210716 19:21:41.547" endtime="20210716 19:21:41.846"/>
+</kw>
+<status status="PASS" starttime="20210716 19:21:39.145" endtime="20210716 19:21:41.846"/>
+</kw>
+<timeout value="50 minutes"/>
+<status status="FAIL" starttime="20210716 19:21:15.837" endtime="20210716 19:21:41.846">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=90.0.4430.72)
+</status>
+</test>
+<status status="FAIL" starttime="20210716 19:21:15.668" endtime="20210716 19:21:41.848"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Sample Test">Sample Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -22,9 +22,10 @@ ${TIMEOUT}          3000
 
 Open test browser
     [Timeout]   ${TIMEOUT}
-    Open browser  https://lambdatest.github.io/sample-todo-app/  browser=${BROWSER}
+    Open browser  https://webcamtests.com/check  browser=${BROWSER}
     ...  remote_url=${REMOTE_URL}
     ...  desired_capabilities=${CAPABILITIES}
+    ...  options=add_argument("--use-fake-device-for-media-stream");add_argument("--use-fake-ui-for-media-stream")
 
 Close test browser
     Run keyword if  '${REMOTE_URL}' != ''
